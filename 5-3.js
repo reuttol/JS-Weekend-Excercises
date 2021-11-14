@@ -12,7 +12,7 @@ function toCamelCase(str){
 
 function toCamelCase2(str){
 
-   const words = str.split("_");
+   const words = str.split(/[- _]+/);
    const temp = words.slice(1).map(word => word.charAt(0).toUpperCase() + word.slice(1));
    temp.unshift(words[0]);
 
@@ -24,3 +24,4 @@ console.log(toCamelCase("java_script_is_fun"));
 
 console.log("Second Approach");
 console.log(toCamelCase2("java_script_is_fun"));
+console.log(toCamelCase2("java-script-is_fun"));
